@@ -187,6 +187,13 @@ export class CatalogComponent {
       },
     ];
   }
+  getClassesForElements(product : IProduct){
+    if(product.discount > 0 )
+      return ['strikeThroug','bold'];
+    else 
+    return [] ; 
+    
+  }
   getImageUrl(product:IProduct){
     return './assets/images/robot-parts/' + product.imageName;
   }

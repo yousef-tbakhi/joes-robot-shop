@@ -77,3 +77,10 @@
 .discount{
     color: palevioletred;
 }
+.strikeThroug{
+    text-decoration:line-through;
+    font-size: 18px;
+}
+.bold{
+    color: green;
+}
