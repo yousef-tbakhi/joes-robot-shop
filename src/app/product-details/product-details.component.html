@@ -1,0 +1,24 @@
+<div class="product">
+    <div class="product-details">
+        <img [src]="getImageUrl(product)" [alt]="product.name" />
+        <!-- <img [src]="'/assets/images/robot-parts/'+ product.imageName" [alt]="product.name" /> -->
+        <!-- this is one way bindding from  -->
+        <!-- <input type="text" [value]="product.name"> -->
+        <div class="product-info">
+            <div class="name">{{product.name}}</div>
+            <div class="description">{{product.description}}</div>
+            <div class="category">Part Type: {{product.category}}</div>
+        </div>
+    </div>
+    <div class="price">
+        <div 
+            [ngClass]="getClassesForElements(product)" 
+            [ngStyle]="{color : product.discount > 0 ? 'red' : ''}">
+            {{product.price | currency:'USD'}}
+        </div> 
+        <div *ngIf="product.discount > 0 " class="discount">
+            {{(product.price - (product.price * product.discount)) | currency}}
+        </div>
+        <button class="cta" (click)="addToCart(product)">Buy</button>
+    </div>
+</div>
