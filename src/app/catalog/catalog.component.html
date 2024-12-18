@@ -22,9 +22,11 @@
                     </div>
                 </div>
                 <div class="price">
-                    <div [ngClass]="getClassesForElements(product)">
+                    <div 
+                        [ngClass]="getClassesForElements(product)" 
+                        [ngStyle]="{color : product.discount > 0 ? 'red' : ''}">
                         {{product.price | currency:'USD'}}
-                    </div>
+                    </div> 
                     <div *ngIf="product.discount > 0 " class="discount">
                         {{(product.price - (product.price * product.discount)) | currency}}
                     </div>
