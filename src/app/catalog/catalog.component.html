@@ -22,9 +22,9 @@
                     </div>
                 </div>
                 <div class="price">
-                    <div *ngIf="product.discount === 0 ">${{product.price.toFixed(2)}}</div>
+                    <div *ngIf="product.discount === 0 ">{{product.price | currency:'USD'}}</div>
                     <div *ngIf="product.discount > 0 " class="discount">
-                        ${{(product.price - (product.price * product.discount)).toFixed(2)}}
+                        {{(product.price - (product.price * product.discount)) | currency}}
                     </div>
                     <button class="cta">SBuy</button>
                 </div>
