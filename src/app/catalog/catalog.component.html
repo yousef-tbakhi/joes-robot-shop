@@ -9,7 +9,12 @@
 
     <ul class="products" *ngFor="let curruntProduct of getFilteredResult()">
         <li class="product-item">
-            <bot-product-details [product]="curruntProduct"></bot-product-details>
+            <bot-product-details 
+            [product]="curruntProduct"
+            (buy)="addToCart(curruntProduct)"
+            >
+        
+            </bot-product-details>
 
             <!-- <bot-product-details [product] ==> this is should be the same name of the child in it typeSrcipt file 
             ="curruntProduct" ==> this is should be the same name of ngFor obj  
